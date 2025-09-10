@@ -1,0 +1,43 @@
+<!--<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"-->
+<!--             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"-->
+<!--             xmlns:xs="http://www.w3.org/2001/XMLSchema"-->
+<!--             xmlns:tns="http://example.com/loginservice"-->
+<!--             targetNamespace="http://example.com/loginservice"-->
+<!--             name="LoginService">-->
+
+<!--    <message name="LoginRequest">-->
+<!--        <part name="username" type="xs:string"/>-->
+<!--        <part name="password" type="xs:string"/>-->
+<!--    </message>-->
+
+<!--    <message name="LoginResponse">-->
+<!--        <part name="status" type="xs:string"/>-->
+<!--    </message>-->
+
+<!--    <portType name="LoginPortType">-->
+<!--        <operation name="login">-->
+<!--            <input message="tns:LoginRequest"/>-->
+<!--            <output message="tns:LoginResponse"/>-->
+<!--        </operation>-->
+<!--    </portType>-->
+
+<!--    <binding name="LoginBinding" type="tns:LoginPortType">-->
+<!--        <soap:binding style="document"-->
+<!--                      transport="http://schemas.xmlsoap.org/soap/http"/>-->
+<!--        <operation name="login">-->
+<!--            <soap:operation soapAction="http://example.com/loginservice/login"/>-->
+<!--            <input>-->
+<!--                <soap:body use="literal"/>-->
+<!--            </input>-->
+<!--            <output>-->
+<!--                <soap:body use="literal"/>-->
+<!--            </output>-->
+<!--        </operation>-->
+<!--    </binding>-->
+
+<!--    <service name="LoginService">-->
+<!--        <port name="LoginPort" binding="tns:LoginBinding">-->
+<!--            <soap:address location="http://localhost:8080/ws/login"/>-->
+<!--        </port>-->
+<!--    </service>-->
+<!--</definitions>-->
