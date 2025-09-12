@@ -70,23 +70,21 @@ function Rentabook() {
     if (books.length > 0) {
       const formatted = books.map((b) => ({
         value: b.id,
-        label: `${b.title} (Available: ${(b)} - ${b.capacity})`,
+        label: `${b.title} (Available: ${b} - ${b.capacity})`,
         capacity: b.capacity,
-
       }));
       setOptionsbooks(formatted);
     }
   }, [books, rented]);
 
   const handleRentSubmit = () => {
-    if ( !selectedusers || !expiredDate) {
+    if (!selectedusers || !expiredDate) {
       alert("Please select a book, user, and expire date.");
       return;
     }
 
-    
-     const rentData = {
-      bookid:idbook ,
+    const rentData = {
+      bookid: idbook,
       personid: selectedusers.value,
       capacity: 1,
       expired: expiredDate,
@@ -94,7 +92,7 @@ function Rentabook() {
     };
 
     console.log("Rent data:", rentData);
-    
+
     axios
       .post("http://localhost:8080/api/rentedbooks", rentData, {
         headers: { Authorization: `Bearer ${token}` },
@@ -105,8 +103,7 @@ function Rentabook() {
         setSelectedbooks(null);
         setSelectedusers(null);
         setExpiredDate("");
-        navigate("/BookList" );
-
+        navigate("/BookList");
       })
       .catch((error) => console.error("Error renting book:", error));
   };
@@ -115,60 +112,54 @@ function Rentabook() {
     localStorage.removeItem("token");
     navigate("/login", { replace: true });
   };
-const book = books.find(b => b.id == idbook );
-const Backbutton= ()=>{
-      navigate("/Booklist", { replace: true });
-
-}
-   return (
+  const book = books.find((b) => b.id == idbook);
+  const Backbutton = () => {
+    navigate("/Booklist", { replace: true });
+  };
+  return (
     <div>
-
       <button className="logout-btn" onClick={handleLogout}>
         <FaSignOutAlt /> Signout
       </button>
 
       <div className="Books">
-        <button
-            className="logout-btn"
-            onClick={Backbutton}
-
-          >
-            Back  
-          </button>
+        <button className="logout-btn" onClick={Backbutton}>
+          Back
+        </button>
         <h2>Rent a Book</h2>
         <div>
-    {book ? (
-      <div>
-      <h3>{book.title}</h3>
-        {book.thumbnailUrl && <img src={book.thumbnailUrl} alt={book.title} />}
-         <p>Author: {book.authors.join(', ')}</p>
-            <p>  Description: <br></br>{book.longDescription}</p>
-
-      </div>
-    ) : (
-      <p>Book not found or still loading...</p>
-    )}
-  </div>
- 
-      
-      
+          {book ? (
+            <div>
+              <h3>{book.title}</h3>
+              {book.thumbnailUrl && (
+                <img src={book.thumbnailUrl} alt={book.title} />
+              )}
+              <p>Author: {book.authors.join(", ")}</p>
+              <p>
+                {" "}
+                Description: <br></br>
+                {book.longDescription}
+              </p>
+            </div>
+          ) : (
+            <p>Book not found or still loading...</p>
+          )}
+        </div>
 
         {/* Select User */}
-       <div className="p-10 w-65">
-  {/* Dropdown first */}
-  <Select
-    options={optionsusers}
-    value={selectedusers}
-    onChange={setSelectedusers}
-    placeholder="Search and select a user..."
-    isSearchable
-  />
+        <div className="p-10 w-65">
+          {/* Dropdown first */}
+          <Select
+            options={optionsusers}
+            value={selectedusers}
+            onChange={setSelectedusers}
+            placeholder="Search and select a user..."
+            isSearchable
+          />
 
-  {/* Label or extra text below */}
-  
-
- </div>
-<br></br>
+          {/* Label or extra text below */}
+        </div>
+        <br></br>
         {/* Expired Date */}
         <div className="expiredate">
           <label>Expired Date:</label>
@@ -176,20 +167,22 @@ const Backbutton= ()=>{
             type="date"
             value={expiredDate}
             onChange={(e) => setExpiredDate(e.target.value)}
-               style={{ width: "30%", height: "100%", fontSize: "16px" }}
-
-        
+            style={{ width: "30%", height: "100%", fontSize: "16px" }}
           />
-          {expiredDate && <p>  Expire on: {expiredDate ? new Date(expiredDate).toLocaleDateString("en-GB") : ""}
-</p>}
+          {expiredDate && (
+            <p>
+              {" "}
+              Expire on:{" "}
+              {expiredDate
+                ? new Date(expiredDate).toLocaleDateString("en-GB")
+                : ""}
+            </p>
+          )}
         </div>
 
         {/* Submit */}
         <div className="p-4">
-          <button
-            className="Submit-Button"
-            onClick={handleRentSubmit}
-          >
+          <button className="Submit-Button" onClick={handleRentSubmit}>
             Rent Book
           </button>
         </div>

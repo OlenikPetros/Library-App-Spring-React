@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-  import { useNavigate } from 'react-router-dom';
-  const ProtectedPage = () => {
+import { useNavigate } from "react-router-dom";
+const ProtectedPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
       navigate("/login"); // redirect if not logged in
     }
   }, [navigate]);
- 
 };
 
 export default ProtectedPage;

@@ -5,10 +5,10 @@ import { FaEdit, FaTrash, FaEye, FaSignOutAlt } from "react-icons/fa";
 import "./Booklist.css";
 import { PiFacebookLogoThin } from "react-icons/pi";
 
-   function Rented() {
+function Rented() {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
-    const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   const [rented, setRented] = useState([]);
   const [books, setBooks] = useState([]);
 
@@ -39,29 +39,29 @@ import { PiFacebookLogoThin } from "react-icons/pi";
       });
   }, [navigate]);
   axios
-      .get("http://localhost:8080/api/books ", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setBooks(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching Users:", error);
-});
- axios
-      .get("http://localhost:8080/api/rentedbooks", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setRented(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching RentedBooks:", error);
-});
+    .get("http://localhost:8080/api/books ", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      setBooks(response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching Users:", error);
+    });
+  axios
+    .get("http://localhost:8080/api/rentedbooks", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      setRented(response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching RentedBooks:", error);
+    });
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login", { replace: true });
@@ -84,13 +84,13 @@ import { PiFacebookLogoThin } from "react-icons/pi";
       </button>
 
       <div className="Books">
-       <button className="logout-btn" onClick={() => navigate("/BookList")}>
-  Books
-</button>
+        <button className="logout-btn" onClick={() => navigate("/BookList")}>
+          Books
+        </button>
         <h2>Rented</h2>
-       <button className="logout-btn" onClick={() => navigate("/Rentabook")}>
-  Rent
-</button>
+        <button className="logout-btn" onClick={() => navigate("/Rentabook")}>
+          Rent
+        </button>
         <ul>
           {rented.map((renteduser) => (
             <li key={renteduser._id}>
@@ -98,8 +98,7 @@ import { PiFacebookLogoThin } from "react-icons/pi";
               📞 {renteduser.personid} <br />
               ✉️ {renteduser.capacity}
               ✉️ {renteduser.whenrented}
-                            ✉️ {renteduser.expired}
-
+              ✉️ {renteduser.expired}
               <div className="buttons">
                 <button
                   className="edit-btn"

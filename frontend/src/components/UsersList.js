@@ -5,7 +5,7 @@ import { FaEdit, FaTrash, FaEye, FaSignOutAlt } from "react-icons/fa";
 import "./Booklist.css";
 import { PiFacebookLogoThin } from "react-icons/pi";
 
-   function Userspage() {
+function Userspage() {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
@@ -59,11 +59,11 @@ import { PiFacebookLogoThin } from "react-icons/pi";
       </button>
 
       <div className="Books">
-       <button className="logout-btn" onClick={() => navigate("/BookList")}>
-  Books
-</button>
+        <button className="logout-btn" onClick={() => navigate("/BookList")}>
+          Books
+        </button>
         <h2>Users</h2>
-      
+
         <ul>
           {users.map((user) => (
             <li key={user._id}>
