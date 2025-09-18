@@ -1,15 +1,16 @@
-<strong> ibrary Management App </strong>
+<strong> Library Management App </strong>
 
 A full-stack Library Management System built with React (frontend) and Spring Boot + MongoDB (backend).
 This app allows administrators to manage books, users, and rentals in a simple, intuitive interface. 
  Features
- JWT Authentication (secure login / logout)
+ 
+ JWT Authentication (secure login / logout) 
 
  Book Management (add, edit, delete, search books)
 
  User Management (list users, view who rented what)
 
- Rental System
+<strong>Rental System</strong>
 
 Track total, free, and rented copies of each book
 
@@ -19,7 +20,7 @@ Search books by title or author
 
 Clean UI built with React + React Icons
 
-Tech Stack
+<strong>Tech Stack</strong>
 Frontend
 
 React (hooks, functional components)
@@ -32,7 +33,7 @@ React Icons (UI icons)
 
 CSS Modules (styling)
 
-Backend
+<strong>Backend</strong>
 
 Spring Boot (REST API)
 
@@ -51,7 +52,7 @@ Maven
 MongoDB
  running locally or in the cloud
 
-Backend Setup (Spring Boot + MongoDB)
+<strong>Backend Setup (Spring Boot + MongoDB)</strong>
 # Clone the repository
 git clone https://github.com/yourusername/library-app.git
 cd library-app/backend
