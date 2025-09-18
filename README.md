@@ -1,44 +1,94 @@
-# Getting Started with Create React App
+Library Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Library Management System built with React (frontend) and Spring Boot + MongoDB (backend).
+This app allows administrators to manage books, users, and rentals in a simple, intuitive interface. 
+ Features
+ JWT Authentication (secure login / logout)
 
-## Available Scripts
+ Book Management (add, edit, delete, search books)
 
-In the project directory, you can run:
+ User Management (list users, view who rented what)
 
-### `npm start`
+ Rental System
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Track total, free, and rented copies of each book
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Toggle rental history for each book
 
-### `npm test`
+Search books by title or author
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clean UI built with React + React Icons
 
-### `npm run build`
+Tech Stack
+Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React (hooks, functional components)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React Router (navigation)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Axios (API requests)
 
-### `npm run eject`
+React Icons (UI icons)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+CSS Modules (styling)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Spring Boot (REST API)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
- 
-### Analyzing the Bundle Size
+Spring Security + JWT (authentication & authorization)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+MongoDB (data persistence)
+
+Node.js
+ (>= 18.x)
+
+Java JDK 17
+ or higher
+
+Maven
+
+MongoDB
+ running locally or in the cloud
+
+Backend Setup (Spring Boot + MongoDB)
+# Clone the repository
+git clone https://github.com/yourusername/library-app.git
+cd library-app/backend
+
+# Run the app
+mvn spring-boot:run
+
+
+Backend will run on http://localhost:8080
+
+Frontend Setup (React)
+cd library-app/frontend
+
+# Install dependencies
+npm install
+
+# Run app
+npm start
+
+
+Frontend will run on http://localhost:3000
+
+Authentication
+
+JWT stored in localStorage after login
+
+Each request includes Authorization: Bearer <token> header
+
+Logout clears token and redirects to login
+
+Screenshots
+
+(screenshots...)
+
+Contributing
+
+Contributions, issues and feature requests are welcome!
+Feel free to open an issue or submit a pull request.
+
+(More Features are coming!!!)
