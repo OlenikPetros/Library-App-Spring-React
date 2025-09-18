@@ -1,7 +1,7 @@
 package com.example.Controllers;
 
-import com.example.Classes.Book;
-import com.example.Service.BookService;
+import com.example.Models.Book;
+import com.example.Services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -56,7 +56,7 @@ public class BookController {
         return ResponseEntity.ok().build();
     }
 
-    // 5️⃣ (Optional) UPDATE a book by ID
+    // 5️⃣   UPDATE a book by ID
     // PUT http://localhost:8080/api/books/{id}
     @PutMapping("/{id}")
     public ResponseEntity<Book> updateBook(@PathVariable String id, @RequestBody Book updatedBook) {

@@ -2,8 +2,8 @@ package com.example.Controllers;
 
 import java.util.List;
 
-import com.example.Classes.User;
-import com.example.Service.UserService;
+import com.example.Models.User;
+import com.example.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
