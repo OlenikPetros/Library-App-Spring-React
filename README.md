@@ -1,4 +1,4 @@
-Library Management App
+<strong> ibrary Management App </strong>
 
 A full-stack Library Management System built with React (frontend) and Spring Boot + MongoDB (backend).
 This app allows administrators to manage books, users, and rentals in a simple, intuitive interface. 
