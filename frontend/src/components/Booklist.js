@@ -12,48 +12,29 @@ function BookList() {
   const [users, setUsers] = useState([]);
 
   // check login status
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login", { replace: true }); // replace prevents back navigation
-      return;
-    }
+    if (!token) return navigate("/login", { replace: true });
 
-    axios
-      .get("http://localhost:8080/api/books", {
+    Promise.all([
+      axios.get("http://localhost:8080/api/books", {
         headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        setBooks(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching books:", error);
-        if (error.response && error.response.status === 401) {
-          localStorage.removeItem("token");
-          navigate("/login", { replace: true });
-        }
-      });
-    axios
-      .get("http://localhost:8080/api/users", {
+      }),
+      axios.get("http://localhost:8080/api/users", {
         headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        setUsers(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching rentedbooks:", error);
-      });
-    // fetch rentedbooks
-    axios
-      .get("http://localhost:8080/api/rentedbooks", {
+      }),
+      axios.get("http://localhost:8080/api/rentedbooks", {
         headers: { Authorization: `Bearer ${token}` },
+      }),
+    ])
+      .then(([booksRes, usersRes, rentedRes]) => {
+        setBooks(booksRes.data);
+        setUsers(usersRes.data);
+        setRentedBooks(rentedRes.data);
       })
-      .then((response) => {
-        setRentedBooks(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching rentedbooks:", error);
-      });
+      .catch((err) => console.error(err));
   }, [navigate]);
 
   const getRentedCount = (bookid) => {
@@ -89,6 +70,7 @@ function BookList() {
       showexp.current.style.display = "none";
     }
   };
+
   return (
     <div>
       <button className="logout-btn" onClick={handleLogout}>
@@ -98,7 +80,6 @@ function BookList() {
         <button className="logout-btn" onClick={() => navigate("/UsersList")}>
           Users
         </button>
-
         <h2>Books</h2>
         <ul>
           <input

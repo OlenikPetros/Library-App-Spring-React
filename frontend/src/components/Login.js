@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "./Login.css"; // import the CSS file
+import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      navigate("/BookList", { replace: true });
+      navigate("/BookList", { replace: true, state: { token: token } });
     }
   }, [navigate]);
 
@@ -25,15 +24,16 @@ function Login() {
         body: JSON.stringify({ username, password }),
       });
 
+      if (!response.ok) {
+        alert("Login failed! Invalid credentials.");
+        return;
+      }
+
       const data = await response.json();
       console.log("Login response:", data);
 
-      if (data.status === "SUCCESS") {
-        localStorage.setItem("token", data.token); // store token
-        navigate("/BookList", { replace: true }); // prevent back to login
-      } else {
-        alert("Login failed!");
-      }
+      localStorage.setItem("token", data.token);
+      navigate("/BookList", { replace: true });
     } catch (error) {
       console.error("Error logging in:", error);
     }
