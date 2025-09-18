@@ -20,8 +20,7 @@ Search books by title or author
 
 Clean UI built with React + React Icons
 
-<strong>Tech Stack</strong>
-Frontend
+<strong>Tech Stack Frontend</strong>
 
 React (hooks, functional components)
 
@@ -51,15 +50,15 @@ Maven
 
 MongoDB
  running locally or in the cloud
-
+ 
 <strong>Backend Setup (Spring Boot + MongoDB)</strong>
+
 # Clone the repository
 git clone https://github.com/yourusername/library-app.git
 cd library-app/backend
 
 # Run the app
 mvn spring-boot:run
-
 
 Backend will run on http://localhost:8080
 
@@ -83,13 +82,13 @@ Each request includes Authorization: Bearer <token> header
 
 Logout clears token and redirects to login
 
-Screenshots
+<strong>Screenshots</strong>
 
 (screenshots...)
 
-Contributing
+<strong>Contributing</strong>
 
 Contributions, issues and feature requests are welcome!
 Feel free to open an issue or submit a pull request.
 
-(More Features are coming!!!)
+<strong>(More Features are coming!!!)</strong>
