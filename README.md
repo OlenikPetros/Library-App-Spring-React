@@ -1,94 +1,138 @@
-# Library Management App 
+# 📚 Library Management App
 
 A full-stack Library Management System built with React (frontend) and Spring Boot + MongoDB (backend).
-This app allows administrators to manage books, users, and rentals in a simple, intuitive interface. 
- Features
- 
- JWT Authentication (secure login / logout) 
+This project demonstrates secure authentication, CRUD operations, and a complete rental workflow.
 
- Book Management (add, edit, delete, search books)
+#🚀 Features
 
- User Management (list users, view who rented what)
+✅ Authentication & Authorization
 
-<strong>Rental System</strong>
+Secure login/logout with JWT
 
-Track total, free, and rented copies of each book
+Token stored in localStorage
 
-Toggle rental history for each book
+Protected routes (React Router)
 
-Search books by title or author
+✅ Book Management
 
-Clean UI built with React + React Icons
+Add, edit, delete, search books
 
-<strong>Tech Stack Frontend</strong>
+Track total, available, and rented copies
 
-React (hooks, functional components)
+✅ User Management
 
-React Router (navigation)
+View all users
 
-Axios (API requests)
+See who rented which book
 
-React Icons (UI icons)
+✅ Rental System
 
-CSS Modules (styling)
+Rent a book if available
 
-<strong>Backend</strong>
+Toggle rental history per book
 
-Spring Boot (REST API)
+Rental dates with automatic expiry tracking
 
-Spring Security + JWT (authentication & authorization)
+✅ UI / UX
 
-MongoDB (data persistence)
+Clean, responsive UI with React Icons
 
-Node.js
- (>= 18.x)
+Book search by title or author
 
-Java JDK 17
- or higher
+#🛠 Tech Stack Frontend
 
-Maven
+⚛️ React (Hooks, Functional Components)
 
-MongoDB
- running locally or in the cloud
- 
-<strong>Backend Setup (Spring Boot + MongoDB)</strong>
+🧭 React Router (Navigation)
 
-# Clone the repository
+📡 Axios (API Requests)
+
+🎨 CSS Modules + React Icons
+
+# Backend
+
+☕ Spring Boot (REST API)
+
+🔐 Spring Security + JWT (Authentication & Authorization)
+
+🗄️ MongoDB (Data Persistence)
+
+🛠 Maven (Build Tool)
+
+Requirements
+
+Node.js >= 18.x
+
+Java JDK 17+
+
+MongoDB (local or cloud, e.g. Atlas)
+
+# ⚡ Setup
+Backend (Spring Boot + MongoDB)
+# Clone repository
 git clone https://github.com/yourusername/library-app.git
 cd library-app/backend
 
 # Run the app
 mvn spring-boot:run
 
-Backend will run on http://localhost:8080
 
-Frontend Setup (React)
+Backend runs on 👉 http://localhost:8080
+
+Frontend (React)
 cd library-app/frontend
 
 # Install dependencies
 npm install
 
-# Run app
+# Run the app
 npm start
 
 
-Frontend will run on http://localhost:3000
+Frontend runs on 👉 http://localhost:3000
 
-Authentication
+# 🔑 Authentication Flow
 
-JWT stored in localStorage after login
+User logs in → backend issues JWT
 
-Each request includes Authorization: Bearer <token> header
+JWT stored in localStorage
 
-Logout clears token and redirects to login
+All API requests include:
 
-<strong>Screenshots</strong>
+Authorization: Bearer <token>
 
-(screenshots...)
 
-<strong>Contributing</strong>
+Logout clears token + redirects to /login
+
+# 📸 Screenshots
+
+(Screenshots are coming.)
+
+#🛤️ Roadmap
+
+ Role-based access (Admin vs User)
+
+ Email notifications for expiring rentals
+
+ Upload book covers
+
+ Deploy backend + frontend to cloud
+
+# 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
-Feel free to open an issue or submit a pull request.
+Feel free to open an Issue or submit a Pull Request.
 
-<strong>(More Features are coming!!!)</strong>
+# ⭐ Why this project?
+
+This app is built to showcase full-stack development skills:
+
+Building a secure REST API with Spring Boot
+
+Using MongoDB for persistence
+
+Implementing JWT authentication
+
+Developing a React frontend with state management and API calls
+
+Clean and professional GitHub project setup
