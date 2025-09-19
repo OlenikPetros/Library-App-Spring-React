@@ -3,7 +3,7 @@
 A full-stack Library Management System built with React (frontend) and Spring Boot + MongoDB (backend).
 This project demonstrates secure authentication, CRUD operations, and a complete rental workflow.
 
-#🚀 Features
+# 🚀 Features
 
 ✅ Authentication & Authorization
 
@@ -39,7 +39,7 @@ Clean, responsive UI with React Icons
 
 Book search by title or author
 
-#🛠 Tech Stack Frontend
+# 🛠 Tech Stack Frontend
 
 ⚛️ React (Hooks, Functional Components)
 
