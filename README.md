@@ -59,7 +59,7 @@ Book search by title or author
 
 🛠 Maven (Build Tool)
 
-Requirements
+# Requirements
 
 Node.js >= 18.x
 
