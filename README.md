@@ -108,16 +108,6 @@ Logout clears token + redirects to /login
 
 (Screenshots are coming.)
 
-#🛤️ Roadmap
-
- Role-based access (Admin vs User)
-
- Email notifications for expiring rentals
-
- Upload book covers
-
- Deploy backend + frontend to cloud
-
 # 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
