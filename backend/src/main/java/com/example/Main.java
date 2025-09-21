@@ -12,13 +12,3 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 }
-
-@RestController
-@CrossOrigin(origins = "http://localhost:3000")
-class HelloController {
-
-    @GetMapping("/")
-    public String hello() {
-        return "Hello from Spring Boot!";
-    }
-}
