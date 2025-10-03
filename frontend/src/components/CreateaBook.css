@@ -1,0 +1,125 @@
+.Book-Container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  border-bottom: #0501d3;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -25px 18px -14px inset,
+    rgba(0, 0, 0, 0.15) 0 1px 2px, rgba(0, 0, 0, 0.15) 0 2px 4px,
+    rgba(0, 0, 0, 0.15) 0 4px 8px, rgba(0, 0, 0, 0.15) 0 8px 16px,
+    rgba(0, 0, 0, 0.15) 0 16px 32px;
+  border-radius: 14px 14px 14px;
+}
+
+.Book-Header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 340%;
+  color: #2a2a2a;
+  margin: 2%;
+  font-family: revert;
+}
+.Book-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Create-Book-Button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0600ff;
+  font-size: 120%;
+  /* padding-left: 41%;
+  padding-right: 41%; */
+  padding: 1%;
+  /* padding: 3%; */
+  color: white;
+  border-radius: 4px 4px 4px;
+  margin: 1%;
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+  transition: 0.1s;
+  border-width: 0 0 4px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(0, 0, 0) 0 2px 4px;
+}
+
+.Create-Book-Button:hover {
+  background-color: #0300b5;
+  font-size: 121%;
+  transition: 0.2s;
+}
+.Create-Book-Button:active {
+  background-color: #03009c;
+}
+
+.button {
+  color: white;
+  background-color: blue;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.Book-link {
+  color: #61dafb;
+}
+form {
+  /* background-color: antiquewhite; */
+  font-size: 140%;
+  display: grid;
+  width: 90%;
+  border: none;
+  border-radius: 4px;
+}
+input,
+textarea {
+  margin-bottom: 15px;
+}
+.back-btn {
+  display: flex;
+  background-color: #ff0000;
+  font-size: x-large;
+  /* padding-left: 41%; */
+  /* padding-right: 41%; */
+  /* padding-top: 4%; */
+  /* padding-bottom: 4%; */
+  /* padding: 3%; */
+  color: white;
+  border-radius: 4px 4px 4px;
+  margin: 2%;
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+  transition: 0.1s;
+  border-width: 0 0 4px;
+  /* margin-left: auto; */
+  margin-right: auto;
+  box-shadow: rgba(0, 0, 0) 0 2px 4px;
+  /* align-content: stretch; */
+  justify-content: start;
+}
+.back-btn:hover {
+  background-color: #c70000;
+}
+.back-btn:active {
+  background-color: #ea0101;
+}
+@keyframes Book-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

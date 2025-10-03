@@ -18,21 +18,14 @@ function BookList() {
     const token = localStorage.getItem("token");
     if (!token) return navigate("/login", { replace: true });
 
-    Promise.all([
-      axios.get("http://localhost:8080/api/books", {
+    axios
+      .get("http://localhost:8080/api/libraryData", {
         headers: { Authorization: `Bearer ${token}` },
-      }),
-      axios.get("http://localhost:8080/api/users", {
-        headers: { Authorization: `Bearer ${token}` },
-      }),
-      axios.get("http://localhost:8080/api/rentedbooks", {
-        headers: { Authorization: `Bearer ${token}` },
-      }),
-    ])
-      .then(([booksRes, usersRes, rentedRes]) => {
-        setBooks(booksRes.data);
-        setUsers(usersRes.data);
-        setRentedBooks(rentedRes.data);
+      })
+      .then((res) => {
+        setBooks(res.data.books);
+        setUsers(res.data.users);
+        setRentedBooks(res.data.rentedBooks);
       })
       .catch((err) => console.error(err));
   }, [navigate]);
@@ -79,6 +72,9 @@ function BookList() {
       <div className="Books">
         <button className="logout-btn" onClick={() => navigate("/UsersList")}>
           Users
+        </button>
+        <button className="edit-btn" onClick={() => navigate("/CreateaBook")}>
+          CreateaBook
         </button>
         <h2>Books</h2>
         <ul>

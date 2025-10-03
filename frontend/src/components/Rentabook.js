@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaSignOutAlt, FaBackspace } from "react-icons/fa";
 import Select from "react-select";
 import "./Rentabook.css";
 import { useParams } from "react-router-dom";
@@ -124,7 +124,7 @@ function Rentabook() {
 
       <div className="Books">
         <button className="logout-btn" onClick={Backbutton}>
-          Back
+          <FaBackspace /> Back
         </button>
         <h2>Rent a Book</h2>
         <div>

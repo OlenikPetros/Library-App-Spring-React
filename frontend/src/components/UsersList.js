@@ -43,10 +43,10 @@ function Userspage() {
   };
 
   const handleEdit = (id) => {
-    navigate(`/edit-user/${id}`);
+    navigate(`/Edit-User/${id}`);
   };
   const handleDelete = (id) => {
-    navigate(`/delete-user/${id}`);
+    navigate(`/Delete-User/${id}`);
   };
   const handleView = (id) => {
     navigate(`/view-user/${id}`);
@@ -62,14 +62,22 @@ function Userspage() {
         <button className="logout-btn" onClick={() => navigate("/BookList")}>
           Books
         </button>
+        <button
+          className="edit-btn"
+          onClick={() => navigate("/CreateCustomer")}
+        >
+          Create a User
+        </button>
         <h2>Users</h2>
 
         <ul>
           {users.map((user) => (
             <li key={user._id}>
-              <strong>{user.name}</strong> <br />
-              📞 {user.phone} <br />
-              ✉️ {user.email}
+              <strong>{user.name}</strong>
+              <p>
+                📞 {user.phone}{" "}
+                <span style={{ marginLeft: "20px" }}>✉️ {user.email}</span>
+              </p>
               <div className="buttons">
                 <button
                   className="edit-btn"
@@ -82,12 +90,6 @@ function Userspage() {
                   onClick={() => handleDelete(user._id)}
                 >
                   <FaTrash />
-                </button>
-                <button
-                  className="view-btn"
-                  onClick={() => handleView(user._id)}
-                >
-                  <FaEye />
                 </button>
               </div>
             </li>
