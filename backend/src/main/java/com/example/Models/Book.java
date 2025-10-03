@@ -1,5 +1,5 @@
 package com.example.Models;
- 
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -65,8 +65,7 @@ public class Book {
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
     public int getCapacity() { return capacity; }
-    public void setStatus(int capacity) { this.capacity = capacity; }
-
+    public void setCapacity(int capacity) { this.capacity = capacity; }
     public List<String> getAuthors() { return authors; }
     public void setAuthors(List<String> authors) { this.authors = authors; }
 
